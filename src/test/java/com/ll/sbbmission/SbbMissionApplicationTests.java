@@ -1,5 +1,9 @@
 package com.ll.sbbmission;
 
+import com.ll.sbbmission.domain.answer.Answer;
+import com.ll.sbbmission.domain.answer.AnswerRepository;
+import com.ll.sbbmission.domain.question.Question;
+import com.ll.sbbmission.domain.question.QuestionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
