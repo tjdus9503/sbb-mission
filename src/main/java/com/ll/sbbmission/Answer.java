@@ -2,12 +2,12 @@ package com.ll.sbbmission;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@NoArgsConstructor
 @Getter
+@Setter
 @Entity
 public class Answer {
     @Id

@@ -1,15 +1,14 @@
 package com.ll.sbbmission;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
-@NoArgsConstructor
+@Setter
 @Entity
 public class Question {
     @Id
@@ -26,11 +25,4 @@ public class Question {
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
-
-    @Builder
-    public Question(String subject, String content, LocalDateTime createDate) {
-        this.subject = subject;
-        this.content = content;
-        this.createDate = createDate;
-    }
 }

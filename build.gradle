@@ -24,6 +24,7 @@ repositories {
 dependencies {
     // 스프링 웹
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'junit:junit:4.13.1'
 
     // 롬복
     compileOnly 'org.projectlombok:lombok'
