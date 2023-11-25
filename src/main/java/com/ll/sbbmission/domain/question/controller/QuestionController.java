@@ -19,7 +19,7 @@ public class QuestionController {
     @GetMapping("/list")
     public String list(Model model) {
 
-        List<Question> questionList = this.questionService.getList();
+        List<Question> questionList = questionService.getList();
         model.addAttribute("questionList", questionList);
 
         return "question/question_list";
@@ -40,7 +40,7 @@ public class QuestionController {
 
     @PostMapping("/create")
     public String create(@RequestParam String subject, @RequestParam String content) {
-        // TODO: 질문을 저장한다.
+        questionService.createQuestion(subject, content);
 
         return "redirect:/question/list";
     }
