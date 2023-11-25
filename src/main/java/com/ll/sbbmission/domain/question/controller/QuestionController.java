@@ -24,7 +24,7 @@ public class QuestionController {
         List<Question> questionList = this.questionService.getList();
         model.addAttribute("questionList", questionList);
 
-        return "question_list";
+        return "question/question_list";
     }
 
     @GetMapping("/detail/{id}")
@@ -32,6 +32,6 @@ public class QuestionController {
         Question question = questionService.getQuestion(id);
         model.addAttribute("question", question);
 
-        return "question_detail";
+        return "question/question_detail";
     }
 }
