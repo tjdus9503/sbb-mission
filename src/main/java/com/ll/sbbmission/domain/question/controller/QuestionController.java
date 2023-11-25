@@ -1,5 +1,7 @@
-package com.ll.sbbmission.domain.question;
+package com.ll.sbbmission.domain.question.controller;
 
+import com.ll.sbbmission.domain.question.service.QuestionService;
+import com.ll.sbbmission.domain.question.entity.Question;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

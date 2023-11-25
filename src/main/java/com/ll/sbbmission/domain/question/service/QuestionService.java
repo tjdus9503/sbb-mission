@@ -1,5 +1,7 @@
-package com.ll.sbbmission.domain.question;
+package com.ll.sbbmission.domain.question.service;
 
+import com.ll.sbbmission.domain.question.entity.Question;
+import com.ll.sbbmission.domain.question.repository.QuestionRepository;
 import com.ll.sbbmission.global.DataNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

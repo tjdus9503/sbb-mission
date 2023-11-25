@@ -1,7 +1,8 @@
-package com.ll.sbbmission.domain.answer;
+package com.ll.sbbmission.domain.answer.controller;
 
-import com.ll.sbbmission.domain.question.Question;
-import com.ll.sbbmission.domain.question.QuestionService;
+import com.ll.sbbmission.domain.answer.service.AnswerService;
+import com.ll.sbbmission.domain.question.entity.Question;
+import com.ll.sbbmission.domain.question.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,6 +1,8 @@
-package com.ll.sbbmission.domain.answer;
+package com.ll.sbbmission.domain.answer.service;
 
-import com.ll.sbbmission.domain.question.Question;
+import com.ll.sbbmission.domain.answer.entity.Answer;
+import com.ll.sbbmission.domain.answer.repository.AnswerRepository;
+import com.ll.sbbmission.domain.question.entity.Question;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
