@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/question")
 public class QuestionController {
 
-    private final QuestionRepository questionRepository;
     private final QuestionService questionService;
 
     @GetMapping("/list")
