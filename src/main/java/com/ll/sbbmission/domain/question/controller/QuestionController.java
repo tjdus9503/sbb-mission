@@ -1,5 +1,6 @@
 package com.ll.sbbmission.domain.question.controller;
 
+import com.ll.sbbmission.domain.answer.controller.AnswerForm;
 import com.ll.sbbmission.domain.question.entity.Question;
 import com.ll.sbbmission.domain.question.service.QuestionService;
 import jakarta.validation.Valid;
@@ -31,7 +32,7 @@ public class QuestionController {
     }
 
     @GetMapping("/detail/{id}")
-    public String detail(Model model, @PathVariable int id) {
+    public String detail(Model model, @PathVariable int id, AnswerForm answerForm) {
         Question question = questionService.getQuestion(id);
         model.addAttribute("question", question);
 

@@ -21,7 +21,7 @@ public class AnswerController {
     private final AnswerService answerService;
 
     @PostMapping("/create/{id}")
-    public String create(Model model, @PathVariable("id") Integer id, @Valid AnswerForm answerform, BindingResult bindingResult) {
+    public String create(Model model, @PathVariable("id") Integer id, @Valid AnswerForm answerForm, BindingResult bindingResult) {
         Question question = questionService.getQuestion(id);
 
         if (bindingResult.hasErrors()) {
@@ -29,7 +29,7 @@ public class AnswerController {
             return "question/question_detail";
         }
 
-        answerService.create(answerform.getContent(), question);
+        answerService.create(answerForm.getContent(), question);
 
         return "redirect:/question/detail/%d".formatted(id);
     }
