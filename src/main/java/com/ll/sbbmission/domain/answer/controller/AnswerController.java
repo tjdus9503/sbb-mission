@@ -3,12 +3,14 @@ package com.ll.sbbmission.domain.answer.controller;
 import com.ll.sbbmission.domain.answer.service.AnswerService;
 import com.ll.sbbmission.domain.question.entity.Question;
 import com.ll.sbbmission.domain.question.service.QuestionService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -19,10 +21,15 @@ public class AnswerController {
     private final AnswerService answerService;
 
     @PostMapping("/create/{id}")
-    public String create(@PathVariable("id") Integer id, @RequestParam String content) {
+    public String create(Model model, @PathVariable("id") Integer id, @Valid AnswerForm answerform, BindingResult bindingResult) {
         Question question = questionService.getQuestion(id);
 
-        answerService.create(content, question);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("question", question);
+            return "question/question_detail";
+        }
+
+        answerService.create(answerform.getContent(), question);
 
         return "redirect:/question/detail/%d".formatted(id);
     }
