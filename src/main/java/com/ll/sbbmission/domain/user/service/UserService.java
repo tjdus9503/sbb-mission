@@ -2,9 +2,12 @@ package com.ll.sbbmission.domain.user.service;
 
 import com.ll.sbbmission.domain.user.entity.SiteUser;
 import com.ll.sbbmission.domain.user.repository.UserRepository;
+import com.ll.sbbmission.global.DataNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,5 +24,16 @@ public class UserService {
         userRepository.save(user);
 
         return user;
+    }
+
+    public SiteUser getUser(String username) {
+        Optional<SiteUser> siteUser = userRepository.findByUsername(username);
+
+        if (siteUser.isPresent()) {
+            return siteUser.get();
+        }
+        else {
+            throw new DataNotFoundException("siteuser not found");
+        }
     }
 }
