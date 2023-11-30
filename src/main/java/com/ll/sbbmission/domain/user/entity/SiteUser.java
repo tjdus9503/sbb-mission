@@ -1,4 +1,4 @@
-package com.ll.sbbmission.domain.user;
+package com.ll.sbbmission.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
